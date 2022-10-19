@@ -14,15 +14,15 @@
         <div class="container">
             <nav>
                 <img src="/image/WhatsApp Image 2022-10-15 at 10.02.46 PM.jpeg" class="logo">
-                <ul>
+                <ul id="sidemenu">
                     <li><a href="#header">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="#services">SERVICES</a></li>
                     <li><a href="#Portfolio">PORTFOLIO</a></li>
                     <li><a href="#contact">CONTACT</a></li>
-                    
+                    <i class="fas fa-times" onclick="closemenu()"></i>
                 </ul>
-                
+                <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
 
             <div class="header-text">
@@ -210,10 +210,13 @@
 </div>    
     <script>
 
-        var tablinks = document.getElementsByClassName("tab-links");
+var tablinks = document.getElementsByClassName("tab-links");
         var tabcontents = document.getElementsByClassName("tab-contents");
 
         function opentab(tabname)
+
+
+
         {
             for(tablink of tablinks){
                 tablink.classlist.remove("active-link");
@@ -223,9 +226,28 @@
             }
             event.currentTarget.classlist.add("active-link");
             document.getElementById(tabname).classlist.add("active-tab"); 
+
+
+
+
         }
-        
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
+
+       
+       
+    <!--------------------submit button ani-------------->
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbyUCnBZZeDZ5o1-zZI_hNpUDhZISx4lRag9m9uskbL-ofQmtV9hhzZod7_msKrFGt6s/exec'
     const form = document.forms['submit-to-google-sheet']
@@ -244,6 +266,16 @@
         .catch(error => console.error('Error!', error.message))
     })
   </script>
-</body>
+<!-----------------respoincive------------>
+  <script>
+     var sidemenu = document.getElementById("sidemenu");
 
+function openmenu(){
+    sidemenu.style.right ="0"
+}
+function closemenu(){
+    sidemenu.style.right ="-200px"
+}
+  </script>
+</body>
 </html>
